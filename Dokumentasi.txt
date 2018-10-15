@@ -1,0 +1,30 @@
+DOKUMENTASI UJIAN BACK END
+
+// LOGIN AND REGISTER
+	Login	: post('/login')
+			{ email(string), pass(string) } = req.body;
+	Register: post('/register')
+			{ username(string), email(string), pass(string), role(string) } = req.body;
+
+// CREATE KAMAR AND CATEGORY
+	Kamar	: post('/kamar')
+			{ nomorkamar(int), categoryid(int), harga(int) } = req.body;
+	Category: post('/category')
+			{ namacategory(string) } = req.body;
+
+// READ KAMAR AND CATEGORY
+	Kamar	: get('/kamar')
+	Category: get('/category')
+
+//UPDATE KAMAR AND CATEGORY
+	Kamar	: put('/kamar/id')
+			{ nomorkamar(int), categoryid(int), harga(int) } = req.body;
+	Category: put('/category/id)
+			{ namacategory(string) } = req.body;
+
+// DELETE KAMAR AND CATEGORY
+	Kamar	: delete('/kamar/id)
+	Category: delete('/category/id)
+
+//FILTER KAMAR BY CATEGORY
+	Filter Kamar by Category : get('/filterkamar/categoryid(in tablekamar))
